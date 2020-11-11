@@ -1,0 +1,26 @@
+//get data from {}
+
+for stock in df['Stock_Code']:
+  for i in range(0, len(df['Stock_Code']):
+    
+    //pie chart in dash
+    @app.callback(Output('pie', 'figure'),
+              [Input(component_id='sentiment_term', component_property='value')],
+              events=[Event('pie-update', 'interval')])
+              
+    def :
+        values = [positive, negative, neutral]
+        labels = ['Positive', 'Negative', 'Mixed']
+
+
+        trace = go.Pie(labels=labels, values=values,
+                       hoverinfo='label+percent', textinfo='value',
+                       textfont=dict(size=20, color=app_colors['text']),
+                       marker=dict(
+                           line=dict(color=app_colors['background'], width=2)))
+
+        return {"data": [trace], 'layout': go.Layout(
+            font={'color': app_colors['text']},
+            plot_bgcolor=app_colors['background'],
+            paper_bgcolor=app_colors['background'],
+            showlegend=True)}
